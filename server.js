@@ -1,1 +1,1 @@
-console.log('app-test');
+alert('really?');
