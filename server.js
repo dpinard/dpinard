@@ -1,5 +1,5 @@
-const fs = require('fs');
+let rand_number = 7;
 
 alert('really?');
 
-console.log('dapien');
+console.log('dapien', rand_number);
