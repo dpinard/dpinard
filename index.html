@@ -1,92 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Portfolio</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-  <style>
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 550px}
+    <!-- Left Column -->
+    <div class="w3-third">
     
-    /* Set gray background color and 100% height */
-    .sidenav {
-      background-color: lightgray;
-      height: 100vh;
-    }
-        
-    /* On small screens, set height to 'auto' for the grid */
-    @media screen and (max-width: 767px) {
-      .row.content {height: auto;} 
-    }
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="./0001.jpg" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-white">
+            <h2>Damien Pinard</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Programmeur web</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Champigny sur Marne, France</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>damien.pinard@epitech.eu</p>
+          <hr>
 
-    .border {
-        border: solid 1px #ddd;
-        background-color: #f5f5f5;
-        padding: 20px;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-    }
-
-    .img-thumbnail {
-        border-bottom-left-radius: 0%;
-        border-bottom-right-radius: 0%;
-    }
-
-  </style>
-</head>
-<body>
-
-<!-- responsive navbar -->
-<nav class="navbar navbar-inverse visible-xs">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Damien Pinard</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- normal navbar -->
-<div class="container-fluid">
-
-    <div class="row content">
-        <div class="col-sm-3 sidenav hidden-xs">
-            <h2 class="text-center">Damien Pinard</h2>
-                <div class="col-sm-10 col-sm-offset-1">
-                    <img src="./user-verify.png" alt="..." class="img-thumbnail">
-                    <div class="col-sm-6 text-center border">Profil</div>
-                    <div class="col-sm-6 text-center border">Messages</div>                        
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Informatique</b></p>
+          <p>Outils</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            Linux
+            Git
+            Docker
+            Postman
+            VSCode
+            Apache
+            PHPmyadmin
+        </div>
+                <p>Technologies</p>
+                <div class="w3-light-grey w3-round-xlarge w3-small">
+                    C
+                    PHP
+                    JS
+                    HTML
+                    CSS
+                    JSON
+                    SQL
+                    MongoDB
+                    AJAX
+                
+                    
                 </div>
-        </div>
-        
-<!-- body -->
-        <br>
-        <div class="col-sm-9">
-            <div class="well">
-                <h4>Dashboard</h4>
-                <p>
-                    ce profil a ete consulter X fois
+                      <p>Frameworks</p>
+                      <div class="w3-light-grey w3-round-xlarge w3-small">
+                                Laravel
+                                NodeJS
+                                Express
+                                jQuery
+                                ReactJS
+                                React Native      
+                            </div>
+          <hr>
 
-                </p>
-            </div>
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <p>Francais</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+          </div>
+          <p>Anglais</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+          </div>
+          <br>
         </div>
+        <hr>
+    </div><br>
+    <!-- End Left Column -->
     </div>
 
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Developpeur Full-stack / Lynx-business.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Octobre 2020 - <span class="w3-tag w3-teal w3-round">Novembre 2020</span></h6>
+            <p>
+                <b>Environnement:</b> Devilbox, Laravel, JQuery
+            </p>
+        </div>
+
+
+        <hr>
+       
+      </div>
+
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Samsung Campus (RNCP IV)</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019 - 2021</h6>
+          <p>Developpeur Web & Application</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Piscine 42 (1 mois)</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2017</h6>
+          <p></p>
+          <hr>
+        </div>
+
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
 </div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+
+  <a href="http://linkedin.com/in/dpinard"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
 
 </body>
 </html>
