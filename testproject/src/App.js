@@ -40,7 +40,7 @@ function App() {
       <Drawer
         variant="permanent"
         sx={{
-          display:{xs: 'none', sm:'block'},
+          display:{xs: 'none', sm:'none', md:'block'},
           width: 240,
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box' },
@@ -54,20 +54,27 @@ function App() {
           display:'flex',
           flexWrap: 'wrap',
           '&> :not(style)': {
-            p:2,
+            p:3,
             width: 256,
             height: 128,
           },
         }}
       >
-      <Paper outlined sx={{m:3,p:3}}>
-        <Box sx={{display:'flex', justifyContent:'space-between'}}>
-          <h4> PROJETS </h4>
-          <Avatar sx={{p:4}}>
+      <Paper outlined sx={{m:4,p:4}}>
+        
+        <Box sx={{display:'flex',justifyContent:'space-between'}}>
+
+          <Box sx={{display:'flex', flexDirection:'column'}}>
+            <Typography variant='h6' fontWeight='600' fontSize='0.90em'> PROJETS </Typography>
+            <Typography variant='h5' lineHeight='1.2' fontWeight='700' fontSize='2rem'> 3 </Typography>
+          </Box>
+        
+          <Avatar sx={{p:3, backgroundColor:'green'}}>
             <TopicOutlinedIcon/>
           </Avatar>
+
         </Box>
-        <span> 3 </span>
+
       </Paper>
 
 
