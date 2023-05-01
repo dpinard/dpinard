@@ -24,8 +24,10 @@ import Icon from '@mui/material/Icon';
 
 function App() {
   return (
-    <div>
-
+      <div>
+    <head>
+      <meta name="viewport" content="initial-scale=1, width=device-width" />
+    </head>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
@@ -48,6 +50,7 @@ function App() {
         <Toolbar />
       <Box
         sx={{
+          display:'flex',
           flexWrap: 'wrap',
           '&> :not(style)': {
             p:2,
@@ -65,6 +68,8 @@ function App() {
         </Box>
         <span> 3 </span>
       </Paper>
+
+
     </Box>
         
 
