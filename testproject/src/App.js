@@ -12,15 +12,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+
 
 import TopicOutlinedIcon from '@mui/icons-material/TopicOutlined';
 import Avatar from '@mui/material/Avatar';
 import Icon from '@mui/material/Icon';
+
+
 
 function App() {
   return (
@@ -60,13 +58,13 @@ function App() {
           },
         }}
       >
-      <Paper outlined sx={{m:4,p:4}}>
+      <Paper sx={{m:4,p:4}}>
         
         <Box sx={{display:'flex',justifyContent:'space-between'}}>
 
-          <Box sx={{display:'flex', flexDirection:'column'}}>
-            <Typography variant='h6' fontWeight='600' fontSize='0.90em'> PROJETS </Typography>
-            <Typography variant='h5' lineHeight='1.2' fontWeight='700' fontSize='2rem'> 3 </Typography>
+          <Box sx={{display:'flex', flexDirection:'column', }}>          
+            <Typography variant='h6' textTransform='uppercase' fontFamily="Arial" letterSpacing='0.5px' fontWeight='600' fontSize='0.90em'> Projets </Typography>
+            <Typography variant='h5' fontFamily="sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> 123 </Typography>
           </Box>
         
           <Avatar sx={{p:3, backgroundColor:'green'}}>
