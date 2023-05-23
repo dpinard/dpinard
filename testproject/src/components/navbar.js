@@ -3,8 +3,7 @@ import { Drawer } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
-import TopicOutlinedIcon from '@mui/icons-material/TopicOutlined';
-
+import PersonIcon from '@mui/icons-material/Person';
 
 
 export default function Navbar() {
@@ -18,7 +17,8 @@ export default function Navbar() {
             </Typography>
 
             <Avatar sx={{p:3, backgroundColor:'green'}}>
-                <TopicOutlinedIcon/>
+                
+                <PersonIcon/>
             </Avatar>
         </Toolbar>
 

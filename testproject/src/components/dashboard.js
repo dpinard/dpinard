@@ -4,6 +4,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import TopicOutlinedIcon from '@mui/icons-material/TopicOutlined';
+import GroupIcon from '@mui/icons-material/Group';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 
 const styles = {
     dashCardPaper:{
@@ -39,7 +43,7 @@ export default function Dashboard () {
                         <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> 50$ </Typography>
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'green'}}>
-                        <TopicOutlinedIcon/>
+                        <ElectricBoltIcon/>
                     </Avatar>
                     </Box>
                 </Paper>
@@ -65,7 +69,7 @@ export default function Dashboard () {
                         <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> +20% </Typography>
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'green'}}>
-                        <TopicOutlinedIcon/>
+                        <BarChartIcon/>
                     </Avatar>
                     </Box>
                 </Paper>
@@ -78,7 +82,7 @@ export default function Dashboard () {
                         <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> +9.97$ </Typography>
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'green'}}>
-                        <TopicOutlinedIcon/>
+                        <RocketLaunchIcon/>                        
                     </Avatar>
                     </Box>
                 </Paper>
@@ -91,7 +95,7 @@ export default function Dashboard () {
                         <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> 0 </Typography>
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'green'}}>
-                        <TopicOutlinedIcon/>
+                        <GroupIcon/>
                     </Avatar>
                     </Box>
                 </Paper>
