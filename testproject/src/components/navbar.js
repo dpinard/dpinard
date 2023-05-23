@@ -2,18 +2,26 @@ import { AppBar } from '@mui/material';
 import { Drawer } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import TopicOutlinedIcon from '@mui/icons-material/TopicOutlined';
+
 
 
 export default function Navbar() {
     return (
         <div>
 
-        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>        
+        <AppBar position="fixed" noWrap sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>        
         <Toolbar>
-            <Typography variant="h6" noWrap component="div">
+            <Typography variant="h6" component="div" style={{flex:1}}>
                 PRONO STATS
             </Typography>
+
+            <Avatar sx={{p:3, backgroundColor:'green'}}>
+                <TopicOutlinedIcon/>
+            </Avatar>
         </Toolbar>
+
         </AppBar>
 
         <Drawer
