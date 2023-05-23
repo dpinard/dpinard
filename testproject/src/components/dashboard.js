@@ -8,6 +8,7 @@ import GroupIcon from '@mui/icons-material/Group';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+import SavingsIcon from '@mui/icons-material/Savings';
 
 const styles = {
     dashCardPaper:{
@@ -43,7 +44,7 @@ export default function Dashboard () {
                         <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> 50$ </Typography>
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'green'}}>
-                        <ElectricBoltIcon/>
+                        <SavingsIcon/>
                     </Avatar>
                     </Box>
                 </Paper>
@@ -56,7 +57,7 @@ export default function Dashboard () {
                         <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> 1 </Typography>
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'green'}}>
-                        <TopicOutlinedIcon/>
+                        <ElectricBoltIcon/>
                     </Avatar>
                     </Box>
                 </Paper>
