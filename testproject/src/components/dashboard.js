@@ -55,6 +55,19 @@ export default function Dashboard () {
                     </Box>
                 </Paper>
 
+        {/* SUIVI */}
+                <Paper sx={styles.dashCardPaper}>  
+                    <Box sx={{display:'flex',justifyContent:'space-between'}}>
+                    <Box sx={{display:'flex', flexDirection:'column', }}>          
+                        <Typography variant='h6' textTransform='uppercase' fontFamily="Arial" letterSpacing='0.5px' fontWeight='600' fontSize='0.90em'> Suivi </Typography>
+                        <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> 0 </Typography>
+                    </Box>
+                    <Avatar sx={{p:3, backgroundColor:'lightblue'}}>
+                        <GroupIcon/>
+                    </Avatar>
+                    </Box>
+                </Paper>
+
         {/* PRONOSTICS */}
                 <Paper sx={styles.dashCardPaper}>  
                     <Box sx={{display:'flex',justifyContent:'space-between'}}>
@@ -90,19 +103,6 @@ export default function Dashboard () {
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'lightgreen'}}>
                         <RocketLaunchIcon/>                        
-                    </Avatar>
-                    </Box>
-                </Paper>
-
-           {/* SUIVI */}
-                <Paper sx={styles.dashCardPaper}>  
-                    <Box sx={{display:'flex',justifyContent:'space-between'}}>
-                    <Box sx={{display:'flex', flexDirection:'column', }}>          
-                        <Typography variant='h6' textTransform='uppercase' fontFamily="Arial" letterSpacing='0.5px' fontWeight='600' fontSize='0.90em'> Suivi </Typography>
-                        <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> 0 </Typography>
-                    </Box>
-                    <Avatar sx={{p:3, backgroundColor:'lightblue'}}>
-                        <GroupIcon/>
                     </Avatar>
                     </Box>
                 </Paper>
