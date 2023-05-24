@@ -14,6 +14,7 @@ const styles = {
         m:4,
         p:4, 
         borderRadius:'16px',
+        flexGrow:1,
     },
 };
 
@@ -22,8 +23,12 @@ export default function Dashboard () {
     
     return (
         <div>
-            
-            <Toolbar />
+            <Toolbar/>
+            <Toolbar variant='h1'>
+
+            TABLEAU DE BORD
+            </Toolbar>
+
             <Box
             sx={{
                 display:'flex',
@@ -35,6 +40,8 @@ export default function Dashboard () {
                 height: 128,
                 },
             }}>
+
+
         {/* CAPITAL */}
                 <Paper sx={styles.dashCardPaper}>  
                     <Box sx={{display:'flex',justifyContent:'space-between'}}>
