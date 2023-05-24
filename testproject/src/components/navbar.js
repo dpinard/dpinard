@@ -10,13 +10,13 @@ export default function Navbar() {
     return (
         <div>
 
-        <AppBar position="fixed" noWrap sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>        
+        <AppBar position="fixed" noWrap sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, background:'linear-gradient(to right, #FFC371, #FF5F6D)' }}>        
         <Toolbar>
             <Typography variant="h6" component="div" style={{flex:1}}>
                 PRONO STATS
             </Typography>
 
-            <Avatar sx={{p:3, backgroundColor:'green'}}>
+            <Avatar sx={{p:3, backgroundColor:'#FF5F6D'}}>
                 
                 <PersonIcon/>
             </Avatar>
