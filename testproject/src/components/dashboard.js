@@ -59,8 +59,9 @@ export default function Dashboard () {
                 '&> :not(style)': {
                 p:'1%',
                 m:'0%',
-                width:'12%',
+                width:'auto',
                 height:'20%',
+                
                 },
             }}>
 
