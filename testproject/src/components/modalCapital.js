@@ -9,7 +9,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '40%',
+  width: '80%',
   bgcolor: 'background.paper',
 //   border: '1px solid #000',
   boxShadow: 24,
@@ -37,8 +37,8 @@ export default function BasicModal() {
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             BUDGET INVESTIS : 50
-            SOLDE TOTAL: 67
           </Typography>
+            SOLDE TOTAL: 67
         </Box>
       </Modal>
     </div>
