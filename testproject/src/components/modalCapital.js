@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const style = {
   position: 'absolute',
@@ -24,7 +25,7 @@ export default function BasicModal() {
 
   return (
     <div>
-      <Button sx={{flexGrow:1}} onClick={handleOpen}>View All</Button>
+      <Button onClick={handleOpen}><Box sx={{display:'flex', alignItems:'flex-end', fontSize:'0.80em'}}>View <ArrowForwardIcon/></Box></Button>
       <Modal
         open={open}
         onClose={handleClose}

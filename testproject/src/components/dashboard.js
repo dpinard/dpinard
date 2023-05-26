@@ -22,15 +22,16 @@ const styles = {
         border:'1px',
         borderTopRightRadius: '16px',
         borderTopLeftRadius: '16px',
-        borderBottom:'0px'
+        borderBottomRightRadius:'0px',
+        borderBottomLeftRadius:'0px'
     },
     PaperBot:{
-        m:0,
         marginBottom:1,
         border:'1px',
+        borderTopRightRadius: '0px',
+        borderTopLeftRadius: '0px',
         borderBottomRightRadius: '16px',
         borderBottomLeftRadius: '16px',
-        borderTop:'0px',
         boxShadow:1,
         display:'flex',
         justifyContent:'right',
