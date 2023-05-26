@@ -25,7 +25,7 @@ export default function BasicModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}><Box sx={{display:'flex', alignItems:'flex-end', fontSize:'0.80em'}}>View <ArrowForwardIcon/></Box></Button>
+      <Button onClick={handleOpen}><Box sx={{display:'flex', alignItems:'center', fontSize:'0.80em', lineHeight:2}}>View <ArrowForwardIcon/></Box></Button>
       <Modal
         open={open}
         onClose={handleClose}
