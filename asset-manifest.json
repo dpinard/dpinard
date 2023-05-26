@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/dpinard/static/css/main.e6c13ad2.css",
-    "main.js": "/dpinard/static/js/main.ab65ca9f.js",
+    "main.js": "/dpinard/static/js/main.33c2fb8e.js",
     "static/js/787.6d694c4a.chunk.js": "/dpinard/static/js/787.6d694c4a.chunk.js",
     "static/media/logo.svg": "/dpinard/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/dpinard/index.html",
     "main.e6c13ad2.css.map": "/dpinard/static/css/main.e6c13ad2.css.map",
-    "main.ab65ca9f.js.map": "/dpinard/static/js/main.ab65ca9f.js.map",
+    "main.33c2fb8e.js.map": "/dpinard/static/js/main.33c2fb8e.js.map",
     "787.6d694c4a.chunk.js.map": "/dpinard/static/js/787.6d694c4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.ab65ca9f.js"
+    "static/js/main.33c2fb8e.js"
   ]
 }
