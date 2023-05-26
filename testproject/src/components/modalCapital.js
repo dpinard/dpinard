@@ -37,6 +37,7 @@ export default function BasicModal() {
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             BUDGET INVESTIS : 50
+            SOLDE TOTAL: 67
           </Typography>
         </Box>
       </Modal>
