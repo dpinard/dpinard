@@ -24,7 +24,7 @@ export default function BasicModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>View All</Button>
+      <Button sx={{flexGrow:1}} onClick={handleOpen}>View All</Button>
       <Modal
         open={open}
         onClose={handleClose}
