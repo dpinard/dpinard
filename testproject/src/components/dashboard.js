@@ -8,6 +8,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import SavingsIcon from '@mui/icons-material/Savings';
+import BasicModal from './modalCapital';
 
 const styles = {
     dashCardPaper:{
@@ -110,6 +111,25 @@ export default function Dashboard () {
 
             </Box>
 
+            <Toolbar variant='body'>
+                body lorem ipsum body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+                body lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsumbody lorem ipsum
+            </Toolbar>
+            <Toolbar>
+                <BasicModal variant='container' sx={{m:'1%'}}/>
+                
+                </Toolbar>
 
         </div>
     )
