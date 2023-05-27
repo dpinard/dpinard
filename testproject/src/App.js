@@ -17,11 +17,11 @@ function App() {
         <link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans:300,400,500' rel='stylesheet'/>
       </head>
     
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', backgroundColor:'#fafafa', height:'100vh'}}>
       <CssBaseline />     
 {/* appbar */}
       <Navbar/>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow:1, p:3}}>
 {/* dashboard */}
         <Dashboard/>
       </Box>
