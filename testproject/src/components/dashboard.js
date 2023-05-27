@@ -8,7 +8,10 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import SavingsIcon from '@mui/icons-material/Savings';
-import BasicModal from './modalCapital';
+import BasicModal from './Modals/modalCapital';
+import FollowModal from './Modals/modalFollow';
+import PronoModal from './Modals/modalProno';
+import RatioModal from './Modals/modalRatio';
 
 const styles = {
     dashCardPaper:{
@@ -18,7 +21,7 @@ const styles = {
         flexGrow:1,
     },
     PaperTop:{
-        p:2,
+        p:3,
         border:'1px',
         borderTopRightRadius: '16px',
         borderTopLeftRadius: '16px',
@@ -26,6 +29,7 @@ const styles = {
         borderBottomLeftRadius:'0px'
     },
     PaperBot:{
+        height:'35px',
         marginBottom:1,
         border:'1px',
         borderTopRightRadius: '0px',
@@ -40,7 +44,9 @@ const styles = {
         m:4,
         p:4,
         flexGrow:1,
+        borderRadius:'16px',
     },
+
 };
 
 
@@ -91,7 +97,7 @@ export default function Dashboard () {
                 <Paper sx={styles.PaperTop}>  
                     <Box sx={{display:'flex',justifyContent:'space-between'}}>
                     <Box sx={{display:'flex', flexDirection:'column', }}>          
-                        <Typography variant='h6' color='#757575' textTransform='uppercase' fontFamily="Arial" letterSpacing='0.5px' fontWeight='600' fontSize='0.90em'> Suivi </Typography>
+                        <Typography variant='h6' color='#757575' textTransform='uppercase' fontFamily="Arial" letterSpacing='0.5px' fontWeight='600' fontSize='0.90em'> Abonnement </Typography>
                         <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> 0 </Typography>
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'lightblue'}}>
@@ -100,7 +106,7 @@ export default function Dashboard () {
                     </Box>
                 </Paper>
                 <Paper sx={styles.PaperBot}>
-                    <BasicModal/>
+                    <FollowModal/>
                 </Paper>
 
 </Box>
@@ -111,7 +117,7 @@ export default function Dashboard () {
                 <Paper sx={styles.PaperTop}>  
                     <Box sx={{display:'flex',justifyContent:'space-between'}}>
                     <Box sx={{display:'flex', flexDirection:'column', }}>          
-                        <Typography variant='h6' color='#757575' textTransform='uppercase' fontFamily="Arial" letterSpacing='0.5px' fontWeight='600' fontSize='0.90em'> Pronostics </Typography>
+                        <Typography variant='h6' color='#757575' textTransform='uppercase' fontFamily="Arial" letterSpacing='0.5px' fontWeight='600' fontSize='0.90em'> Pronostic </Typography>
                         <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> 1 </Typography>
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'#ffeb3b'}}>
@@ -120,7 +126,7 @@ export default function Dashboard () {
                     </Box>
                 </Paper>
                 <Paper sx={styles.PaperBot}>
-                    <BasicModal/>
+                    <PronoModal/>
                 </Paper>
 </Box>
 
@@ -131,7 +137,7 @@ export default function Dashboard () {
                 <Paper sx={styles.PaperTop}>  
                     <Box sx={{display:'flex',justifyContent:'space-between'}}>
                     <Box sx={{display:'flex', flexDirection:'column', }}>          
-                        <Typography variant='h6' color='#757575' textTransform='uppercase' fontFamily="Arial" letterSpacing='0.5px' fontWeight='600' fontSize='0.90em'> Balance </Typography>
+                        <Typography variant='h6' color='#757575' textTransform='uppercase' fontFamily="Arial" letterSpacing='0.5px' fontWeight='600' fontSize='0.90em'> Ratio </Typography>
                         <Typography variant='h5' fontFamily="Plus Jakarta Sans, sans-serif" lineHeight='1.7' fontWeight='700' fontSize='2rem'> +20% </Typography>
                     </Box>
                     <Avatar sx={{p:3, backgroundColor:'#4dd0e1'}}>
@@ -140,7 +146,7 @@ export default function Dashboard () {
                     </Box>
                 </Paper>
                 <Paper sx={styles.PaperBot}>
-                    <BasicModal/>
+                    <RatioModal/>
                 </Paper>
 </Box>
 
@@ -158,9 +164,7 @@ export default function Dashboard () {
                     </Avatar>
                     </Box>
                 </Paper>
-                <Paper sx={styles.PaperBot}>
-                    <BasicModal/>
-                </Paper>
+                <Paper sx={styles.PaperBot}></Paper>
 </Box>
 
 

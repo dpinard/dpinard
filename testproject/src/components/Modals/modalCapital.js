@@ -12,7 +12,6 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: '80%',
   bgcolor: 'background.paper',
-//   border: '1px solid #000',
   boxShadow: 24,
   borderRadius:5,
   p: 4,
@@ -34,12 +33,21 @@ export default function BasicModal() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            CAPITAL
+            CAPITAL DU PORTEFEUILLE
           </Typography>
+          Mis a jour le: 27/05/23 at 3h25
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            BUDGET INVESTIS : 50
+            BUDGET MISE PERSO : 25
+            G/P PERSO: +17
+            SOLDE: 42
           </Typography>
-            SOLDE TOTAL: 67
+          <Typography>
+            BUDGET MISE FOLLOWERS: 25
+            G/P FOLLOW: +17
+            SOLDE: 42
+          </Typography>
+            SOLDE TOTAL:84
+            PROFIT:+34
         </Box>
       </Modal>
     </div>
