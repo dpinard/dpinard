@@ -9,6 +9,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import logo from './logo.svg';
 
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Settings from './components/settings';
+
 function App() {
   return (
     <div>
@@ -22,8 +25,14 @@ function App() {
 {/* appbar */}
       <Navbar/>
       <Box component="main" sx={{ flexGrow:1, p:3}}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Settings/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
+          </Routes>
+        </Router>
 {/* dashboard */}
-        <Dashboard/>
+        {/* <Dashboard/> */}
       </Box>
     </Box>
 

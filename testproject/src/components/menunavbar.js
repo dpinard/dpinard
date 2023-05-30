@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import PersonIcon from '@mui/icons-material/Person';
-
+import { Link } from '@mui/material';
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -39,7 +39,9 @@ export default function BasicMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Tableau de bord</MenuItem>
+        <MenuItem onClick={handleClose}>
+            <Link href='/'>Tableau de bord</Link>
+        </MenuItem>
         <MenuItem onClick={handleClose}>Parametres</MenuItem>
         <MenuItem onClick={handleClose}>Connexion / Deconnexion</MenuItem>
       </Menu>
