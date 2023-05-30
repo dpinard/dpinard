@@ -39,6 +39,7 @@ const styles = {
         boxShadow:1,
         display:'flex',
         justifyContent:'right',
+        
     },
     BoxPaper:{
         m:4,

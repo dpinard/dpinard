@@ -2,9 +2,8 @@ import { AppBar } from '@mui/material';
 import { Drawer } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
-import PersonIcon from '@mui/icons-material/Person';
 
+import BasicMenu from './menunavbar';
 
 export default function Navbar() {
     return (
@@ -16,10 +15,7 @@ export default function Navbar() {
                 PRONO STATS
             </Typography>
 
-            <Avatar sx={{p:3, backgroundColor:'#FF5F6D'}}>
-                
-                <PersonIcon/>
-            </Avatar>
+                <BasicMenu/>
         </Toolbar>
 
         </AppBar>
