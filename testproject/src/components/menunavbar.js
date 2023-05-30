@@ -40,7 +40,7 @@ export default function BasicMenu() {
         }}
       >
         <MenuItem onClick={handleClose}>
-            <Link href='/'>Tableau de bord</Link>
+            <Link href='/dashboard'>Tableau de bord</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>Parametres</MenuItem>
         <MenuItem onClick={handleClose}>Connexion / Deconnexion</MenuItem>
