@@ -9,7 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import logo from './logo.svg';
 
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom';
 import Settings from './components/settings';
 
 function App() {
@@ -20,21 +20,21 @@ function App() {
         <link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans:300,400,500' rel='stylesheet'/>
       </head>
     
-    <Box sx={{ display: 'flex', backgroundColor:'#fafafa', height:'100vh'}}>
-      <CssBaseline />     
 {/* appbar */}
-      <Navbar/>
-      <Box component="main" sx={{ flexGrow:1, p:3}}>
+        
         <Router>
-          <Routes>
-            <Route path="/" element={<Settings/>}/>
-            <Route path="/dashboard" element={<Dashboard/>}/>
-          </Routes>
+        <Box sx={{ display: 'flex', backgroundColor:'#fafafa', height:'100vh'}}>
+          <Navbar/>
+          <CssBaseline />     
+          <Box component="main" sx={{ flexGrow:1, p:3}}>
+            <Routes>
+              <Route index path="/" element={<Settings/>}/>
+              <Route path="/dashboard" element={<Dashboard/>}/>
+            </Routes>
+          </Box>
+
+        </Box>
         </Router>
-{/* dashboard */}
-        {/* <Dashboard/> */}
-      </Box>
-    </Box>
 
     </div>
   );
