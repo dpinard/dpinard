@@ -28,8 +28,8 @@ function App() {
           <CssBaseline />     
           <Box component="main" sx={{ flexGrow:1, p:3}}>
             <Routes>
-              <Route index path="/" element={<Settings/>}/>
-              <Route path="/dashboard" element={<Dashboard/>}/>
+              <Route index path="dpinard/" element={<Settings/>}/>
+              <Route path="dpinard/dashboard" element={<Dashboard/>}/>
             </Routes>
           </Box>
 
