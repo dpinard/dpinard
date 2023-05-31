@@ -39,10 +39,10 @@ export default function BasicMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem component={Link} to="/dashboard">
+        <MenuItem onClick={handleClose} component={Link} to="/dashboard">
           dashboard
         </MenuItem>
-        <MenuItem component={Link} to="/">
+        <MenuItem onClick={handleClose} component={Link} to="/">
             Parametres
         </MenuItem>
         <MenuItem onClick={handleClose}>Connexion / Deconnexion</MenuItem>
