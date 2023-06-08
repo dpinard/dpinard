@@ -30,7 +30,7 @@ function App() {
           <Box component="main" sx={{ flexGrow:1, p:3}}>
             <Toolbar/>
             <Routes>
-              <Route index path="/" element={<UserTest/>}/>
+              <Route index path="*" element={<UserTest/>}/>
               <Route path="dpinard/settings" element={<Settings/>}/>
               <Route path="dpinard/dashboard" element={<Dashboard/>}/>
             </Routes>
