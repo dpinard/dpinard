@@ -55,7 +55,6 @@ export default function Dashboard () {
     
     return (
         <div>
-            <Toolbar/>
             <Toolbar variant='h1'>
                 TABLEAU DE BORD
             </Toolbar>

@@ -3,7 +3,7 @@ import './App.css';
 
 import Navbar from './components/navbar';
 import Dashboard from './components/dashboard';
-
+import { Toolbar } from '@mui/material';
 import {Box} from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
@@ -25,8 +25,9 @@ function App() {
         <Router>
         <Box sx={{ display: 'flex', backgroundColor:'#fafafa', height:'100vh'}}>
           <Navbar/>
-          <CssBaseline />     
+          <CssBaseline />
           <Box component="main" sx={{ flexGrow:1, p:3}}>
+            <Toolbar/>
             <Routes>
               <Route index path="dpinard/" element={<Settings/>}/>
               <Route path="dpinard/dashboard" element={<Dashboard/>}/>
