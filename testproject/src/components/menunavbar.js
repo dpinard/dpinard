@@ -42,7 +42,7 @@ export default function BasicMenu() {
         <MenuItem onClick={handleClose} component={Link} to="dpinard/dashboard">
           dashboard
         </MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="dpinard/">
+        <MenuItem onClick={handleClose} component={Link} to="dpinard/settings">
             Parametres
         </MenuItem>
         <MenuItem onClick={handleClose}>Connexion / Deconnexion</MenuItem>

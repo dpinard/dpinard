@@ -11,6 +11,7 @@ import logo from './logo.svg';
 
 import { BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom';
 import Settings from './components/settings';
+import UserTest from './components/classUser';
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
           <Box component="main" sx={{ flexGrow:1, p:3}}>
             <Toolbar/>
             <Routes>
-              <Route index path="dpinard/" element={<Settings/>}/>
+              <Route index path="/" element={<UserTest/>}/>
+              <Route path="dpinard/settings" element={<Settings/>}/>
               <Route path="dpinard/dashboard" element={<Dashboard/>}/>
             </Routes>
           </Box>
