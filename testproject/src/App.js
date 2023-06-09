@@ -11,7 +11,7 @@ import logo from './logo.svg';
 
 import { BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom';
 import Settings from './components/settings';
-import UserTest from './components/classUser';
+import Timer from './components/cpTimer';
 
 function App() {
   return (
@@ -21,16 +21,16 @@ function App() {
         <link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans:300,400,500' rel='stylesheet'/>
       </head>
     
-{/* appbar */}
         
         <Router>
         <Box sx={{ display: 'flex', backgroundColor:'#fafafa', height:'100vh'}}>
+{/* appbar */}
           <Navbar/>
           <CssBaseline />
           <Box component="main" sx={{ flexGrow:1, p:3}}>
             <Toolbar/>
             <Routes>
-              <Route index path="*" element={<UserTest/>}/>
+              <Route index path="*" element={<Timer/>}/>
               <Route path="dpinard/settings" element={<Settings/>}/>
               <Route path="dpinard/dashboard" element={<Dashboard/>}/>
             </Routes>
