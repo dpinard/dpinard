@@ -9,7 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import logo from './logo.svg';
 
-import { BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom';
+import { HashRouter as Router, Routes, Route} from 'react-router-dom';
 import Settings from './components/settings';
 import Timer from './components/cpTimer';
 
