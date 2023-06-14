@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
+import Abonnement from '../cpAbonnement'
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -42,6 +44,8 @@ export default function BasicModal() {
           <Typography>
             Suivis:0 [liste des parieurs suivi, montant accorder]
           </Typography>
+
+          <Abonnement/>
         </Box>
       </Modal>
     </div>

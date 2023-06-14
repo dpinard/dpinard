@@ -5,6 +5,9 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
+import Pronostics from '../cpProno'
+
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -43,6 +46,8 @@ export default function BasicModal() {
             Suivi: G:1 P:1 TOTAL:2 [risque,sport,heure,prono,montant, cote, gains estimer,validite(en attente, en cours, gagner,perdu)]
           </Typography>
           NOMBRES PARIS TOTAL: 4
+
+          <Pronostics/>
         </Box>
       </Modal>
     </div>

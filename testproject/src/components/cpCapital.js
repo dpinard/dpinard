@@ -14,14 +14,14 @@ export default class Capital extends React.Component {
                 totalSolde: 0.5,
                 totalProfit: 0.5,
             },
-            follow: {
+            followers: {
                 misePariPerso: 54,
                 nbPronoRealiser: 2,
                 nbPariGains: 1,
                 nbPariPerdu: 1,
                 gainEuro: 1.5,
                 perteEuro: 1,
-                totalSolde: 0.5,
+                totalSolde: 54.5,
                 totalProfit: 0.5,
             }
         }
