@@ -31,8 +31,8 @@ function App() {
             <Toolbar/>
             <Routes>
               <Route index path="*" element={<Timer/>}/>
-              <Route path="/dpinard/settings" element={<Settings/>}/>
-              <Route path="/dpinard/dashboard" element={<Dashboard/>}/>
+              <Route path="dpinard/settings" element={<Settings/>}/>
+              <Route path="dpinard/dashboard" element={<Dashboard/>}/>
             </Routes>
           </Box>
 
