@@ -1,4 +1,4 @@
-SPECIFICATIONS FEATURES PRONO-STATS v1.0
+SPECIFICATIONS FEATURES PRONO-STATS v1.0.0
 
 -compte utilisateur
     -portefeuille/wallet
@@ -9,6 +9,9 @@ SPECIFICATIONS FEATURES PRONO-STATS v1.0
     -abonnements/followers
 
     -pronostics/bet
+        -api resultat sportif
+        -api prise de paris
+
     
     -parametres/settings
         -inscription/connexion
@@ -19,22 +22,14 @@ SPECIFICATIONS FEATURES PRONO-STATS v1.0
             -pseudo
             -motdepasse
             -type de compte (visibiliter:anonyme,public)
-            -image de profil
+            -ajouter/modifier/supprimer image de profil
             -description utilisateur
+    
+    -service notifications
 
 
 
 --------------------
--api resultat sportif
-    court-terme : rapidapi
-    long-terme: creation API scrapper flashscore
-    creation API proposition de paris 
-
---------------------
-
-
-
-
 
 front-end
     page accueil
@@ -43,3 +38,5 @@ front-end
 
 A VOIR:
 -front charte graphique
+-api scrapper flashscore LT
+-api rapidapi CT
