@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 8000
+const bodyParser = require('body-parser');
 
 
 const mongoose = require('mongoose');
@@ -13,36 +14,33 @@ async function main() {
 }
   
 const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    unique: true,
-  }
+  name: { type: String, unique: true,},
+  hashPwd: { type: String, }
 
 });
 const User = mongoose.model('user', userSchema);
-  
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 app.get('/', async (req, res) => {
   const finder = await User.find();
   res.send(finder);
 })
 
+app.get('/signup', (req, res) => {
+    const user = new User({name: 'mat'})
 
-/* 
-donnees a verif :
-email unique
+    res.send(req.body);
 
-
-*/
-app.get('/signup', async (req, res) => {
-  try {
-    const user = new User({name: 'dam'})
-    await user.save()
-    res.status(200).send('utilisateur sign up');
-  } catch (error) {
-    res.send(error);
-
-  }
+    // user.save()
+      // .then(() => {
+        // res.status(200).send('utilisateur sign up');
+      // })
+      // .catch((error) => {
+        // res.send(error);
+      // })
 })
 
 app.listen(port, () => {
