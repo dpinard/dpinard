@@ -12,21 +12,37 @@ async function main() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
   
-  
-  const userSchema = new mongoose.Schema({
-    name: String
-  });
-  const Userd = mongoose.model('userd', userSchema);
-  
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    unique: true,
+  }
 
-
+});
+const User = mongoose.model('user', userSchema);
+  
 
 app.get('/', async (req, res) => {
-  const userDam = new Userd({name: 'XcjejciejAM'})
-  await userDam.save();
-  const finder = await Userd.find();
+  const finder = await User.find();
+  res.send(finder);
+})
 
-  res.status(200).send(finder);
+
+/* 
+donnees a verif :
+email unique
+
+
+*/
+app.get('/signup', async (req, res) => {
+  try {
+    const user = new User({name: 'dam'})
+    await user.save()
+    res.status(200).send('utilisateur sign up');
+  } catch (error) {
+    res.send(error);
+
+  }
 })
 
 app.listen(port, () => {
