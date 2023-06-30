@@ -1,0 +1,26 @@
+const bcrypt = require('bcrypt');
+const User = require('../schema.js');
+
+const md_hashPwd = (req, res, next) => {
+    // console.log(req.body)
+    const plainMdp = req.body.pwd;
+    const saltRounds = 10;
+    
+    bcrypt.hash(plainMdp, saltRounds).then(function(hash) {
+        const user = new User({name: req.body.name, hashPwd: hash})
+        
+        req.body.msg = 'no new user';
+
+        user.save()
+            .then(() => {
+                req.body.msg = 'ADD NEW USER&'; 
+                next();
+            })
+            .catch((error) => {
+                req.body.msg = 'BROKEEN'; 
+                next();
+            }) 
+    })
+}
+
+module.exports = md_hashPwd;
