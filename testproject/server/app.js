@@ -3,6 +3,7 @@ const app = express()
 const port = 8000
 const bodyParser = require('body-parser');
 const md_hashPwd = require('./src/middleware/md-signup');
+const md_signIn = require('./src/middleware/md-signin');
 const User = require('./src/schema.js');
 
 const mongoose = require('mongoose');
@@ -32,6 +33,13 @@ app.post('/signup', md_hashPwd, (req, res) => {
   res.send({msg: req.body.msg});
 })
 
+app.get('/signin', (req, res) => {
+  
+})
+
+app.post('/signin', md_signIn, (req, res) => {
+  res.send('SIGN IN OK')
+})
 
 
 app.listen(port, () => {

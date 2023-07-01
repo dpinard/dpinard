@@ -1,0 +1,32 @@
+const bcrypt = require('bcrypt');
+const User = require('../schema.js');
+
+const md_signIn = async (req, res, next) => {
+    console.log('md_signIn');
+    // console.log(req.body);
+
+    const login = await User.findOne({name: req.body.name})
+    .exec()
+
+    // console.log(login);
+    // console.log(login.hashPwd);
+    if (login) {
+
+        bcrypt.compare(req.body.pwd, login.hashPwd).then(function(result) {
+            console.log(result);
+            if (result === true) {
+                next();
+            } 
+            else {
+                res.status(222).redirect('/');
+            }
+        })
+    } else {
+        res.status(224).redirect('/');
+
+    }
+    
+}
+
+
+module.exports = md_signIn;
