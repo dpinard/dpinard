@@ -18,12 +18,11 @@ const md_signIn = async (req, res, next) => {
                 next();
             } 
             else {
-                res.status(222).redirect('/');
+                res.json({msg: 'mauvais password'});
             }
         })
     } else {
-        res.status(224).redirect('/');
-
+        res.json({msg: 'mauvais nom utilisateur'});
     }
     
 }

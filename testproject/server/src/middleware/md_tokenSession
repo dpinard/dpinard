@@ -1,0 +1,8 @@
+
+const md_tokenSession = (req, res, next) => {
+    console.log('md-token-session');
+    console.log(req.body);
+    next();
+}
+
+module.exports = md_tokenSession;

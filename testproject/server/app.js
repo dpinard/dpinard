@@ -4,6 +4,7 @@ const port = 8000
 const bodyParser = require('body-parser');
 const md_hashPwd = require('./src/middleware/md-signup');
 const md_signIn = require('./src/middleware/md-signin');
+const md_tokenSession = require('./src/middleware/md_tokenSession');
 const User = require('./src/schema.js');
 
 const mongoose = require('mongoose');
@@ -37,7 +38,7 @@ app.get('/signin', (req, res) => {
   
 })
 
-app.post('/signin', md_signIn, (req, res) => {
+app.post('/signin', [md_signIn, md_tokenSession], (req, res) => {
   res.send('SIGN IN OK')
 })
 
