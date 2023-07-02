@@ -1,7 +1,15 @@
+const jwt = require('jsonwebtoken');
 
 const md_tokenSession = (req, res, next) => {
     console.log('md-token-session');
     console.log(req.body);
+
+    let token = jwt.sign({
+        foo: req.body.id,
+        bar: req.body.name
+    }, 'secret', {expiresIn: '1h'});
+
+    req.body.token = token;
     next();
 }
 

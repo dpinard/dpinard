@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const md_hashPwd = require('./src/middleware/md-signup');
 const md_signIn = require('./src/middleware/md-signin');
 const md_tokenSession = require('./src/middleware/md_tokenSession');
+const md_authToken = require('./src/middleware/md_authToken');
 const User = require('./src/schema.js');
 
 const mongoose = require('mongoose');
@@ -34,12 +35,12 @@ app.post('/signup', md_hashPwd, (req, res) => {
   res.send({msg: req.body.msg});
 })
 
-app.get('/signin', (req, res) => {
-  
+app.get('/signin', md_authToken, (req, res) => {
+  res.json('protected by token');
 })
 
 app.post('/signin', [md_signIn, md_tokenSession], (req, res) => {
-  res.send('SIGN IN OK')
+  res.json({msg: 'SIGN IN OK', 'token': req.body.token})
 })
 
 

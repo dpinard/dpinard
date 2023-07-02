@@ -1,0 +1,17 @@
+const jwt = require('jsonwebtoken');
+
+const authToken = (req, res, next) => {
+    console.log('authToken');
+
+    console.log(req.body.token);
+    let decoded = jwt.verify(req.body.token, 'secret', (err, decoded) => {
+        if (err)
+            res.json(err)
+
+        else
+            next()
+    })
+
+}
+
+module.exports = authToken;
