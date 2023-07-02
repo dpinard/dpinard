@@ -36,12 +36,13 @@ app.post('/signup', md_hashPwd, (req, res) => {
 })
 
 app.get('/signin', md_authToken, (req, res) => {
-  res.json('protected by token');
+  res.json({'protected by token': req.body});
 })
 
 app.post('/signin', [md_signIn, md_tokenSession], (req, res) => {
   res.json({msg: 'SIGN IN OK', 'token': req.body.token})
 })
+
 
 
 app.listen(port, () => {
