@@ -10,7 +10,7 @@ const authToken = (req, res, next) => {
 
         else
             console.log(decoded);
-
+            req.body.foo = decoded.foo;
             next()
     })
 

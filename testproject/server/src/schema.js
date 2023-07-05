@@ -1,16 +1,32 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    name: { 
-        type: String, 
+    email: {
+        type: String,
         unique: true,
-        index: true
+        // required: [true, 'email required']
     },
     hashPwd: { 
         type: String, 
+        // required: [true, 'password required']
     }
-  
-  });
-  const User = mongoose.model('user', userSchema);
+});
+const User = mongoose.model('user', userSchema);
 
-module.exports = User;
+const settingsUserSchema = new mongoose.Schema({
+    pseudo: String,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: User,
+    }
+
+});
+const Settings = mongoose.model('settingsUser', settingsUserSchema);
+
+// name: { 
+    // type: String, 
+    // unique: true,
+// },
+
+
+module.exports = User, Settings;

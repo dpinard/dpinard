@@ -7,7 +7,7 @@ const md_hashPwd = (req, res, next) => {
     const saltRounds = 10;
     
     bcrypt.hash(plainMdp, saltRounds).then(function(hash) {
-        const user = new User({name: req.body.name, hashPwd: hash})
+        const user = new User({email: req.body.email, hashPwd: hash})
         
         req.body.msg = 'no new user';
 
@@ -20,6 +20,10 @@ const md_hashPwd = (req, res, next) => {
                 req.body.msg = 'BROKEEN'; 
                 next();
             }) 
+    })
+    .catch(function(err) {
+        req.body.msg = {'bug bcryyypt': err};
+        next()
     })
 }
 
