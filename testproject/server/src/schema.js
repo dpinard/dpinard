@@ -1,5 +1,20 @@
 const mongoose = require('mongoose');
 
+const userSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        unique: true,
+    },
+    hashPwd: { 
+        type: String, 
+        // required: [true, 'password required']
+    },
+    ofCourse: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Settings',
+    }]
+});
+const User = mongoose.model('User', userSchema);
 
 
 const settingsUserSchema = new mongoose.Schema({
@@ -12,26 +27,11 @@ const settingsUserSchema = new mongoose.Schema({
         ref: 'User',
     }
 });
-const Settings = mongoose.model('settingsUser', settingsUserSchema);
+const Settings = mongoose.model('Settings', settingsUserSchema);
 
 
-const userSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        unique: true,
-    },
-    hashPwd: { 
-        type: String, 
-        // required: [true, 'password required']
-    },
-    ofCourse: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: Settings,
-    }
-});
 
-const User = mongoose.model('user', userSchema);
-
+User.schema.path('ofCourse').options.ref = Settings;
 Settings.schema.path('stg').options.ref = User;
 
 

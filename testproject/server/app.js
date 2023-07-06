@@ -14,7 +14,7 @@ const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/test_pronostat');
+  await mongoose.connect('mongodb://127.0.0.1:27017/pronostat');
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
@@ -26,8 +26,9 @@ app.get('/', async (req, res) => {
   // res.send(finder);
 
   // const user = await Settings.find().populate('stg').exec();
-  const user = await User.find().populate('ofCourse').exec();
-  
+  const user = await User.find({}).exec();
+  // const user = await Settings.find({stg:'64a72a4ac5f54969da978020'}).exec();
+
   
   console.log(user);
   res.send(user);
@@ -57,8 +58,26 @@ app.get('/follow', md_authToken, async(req, res) => {
     pseudo: req.body.pseudo,
     stg: req.body.foo,
   })
-  setUser.save();
+  setUser.save()
+    .then(uId => {
+      console.log(uId._id);
+      let user = User.findById({_id: uId.stg}).exec().then((res) => {
+        console.log(res);
+        res.ofCourse.push(uId._id);
+        res.save();
 
+      });
+
+
+    }).catch(fId => {
+      console.log('catch'+fId);
+  });
+
+  // const setUser= new User({
+    // pseudo: req.body.pseudo,
+    // ofCourse: req.body.foo,
+  // })
+  // setUser.save()
 
   // const user =  await User.findOne({email: 'test@test.com'}).populate('stg').then(result => {
     // console.log(result);
