@@ -3,13 +3,13 @@ const jwt = require('jsonwebtoken');
 const authToken = (req, res, next) => {
     console.log('authToken');
 
-    console.log(req.body.token);
+    // console.log(req.body.token);
     jwt.verify(req.body.token, 'secret', (err, decoded) => {
         if (err)
             res.json(err)
 
         else
-            console.log(decoded);
+            // console.log(decoded);
             req.body.foo = decoded.foo;
             next()
     })

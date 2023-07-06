@@ -6,8 +6,8 @@ const md_hashPwd = require('./src/middleware/md-signup');
 const md_signIn = require('./src/middleware/md-signin');
 const md_tokenSession = require('./src/middleware/md_tokenSession');
 const md_authToken = require('./src/middleware/md_authToken');
-const User = require('./src/schema.js');
-const Settings = require('./src/schema.js');
+const { User } = require('./src/schema.js');
+const { Settings } = require('./src/schema.js');
 
 const mongoose = require('mongoose');
 
@@ -25,7 +25,11 @@ app.get('/', async (req, res) => {
   // const finder = await User.find();
   // res.send(finder);
 
-  const user = await User.find().populate('settingsUser')
+  // const user = await Settings.find().populate('stg').exec();
+  const user = await User.find().populate('ofCourse').exec();
+  
+  
+  console.log(user);
   res.send(user);
 })
 
@@ -47,12 +51,22 @@ app.post('/signin', [md_signIn, md_tokenSession], (req, res) => {
 
 
 
-app.get('/follow', md_authToken, async (req, res) => {
+app.get('/follow', md_authToken, async(req, res) => {
+  console.log('routeFOLLOW');
   const setUser = new Settings({
     pseudo: req.body.pseudo,
-    user: req.body.foo
+    stg: req.body.foo,
   })
   setUser.save();
+
+
+  // const user =  await User.findOne({email: 'test@test.com'}).populate('stg').then(result => {
+    // console.log(result);
+  // })
+
+  // const user = await User.find().populate('stg').exec()
+  console.log(setUser);
+
 
   res.json(req.body)
 })

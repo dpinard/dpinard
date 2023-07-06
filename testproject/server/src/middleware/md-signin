@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const User = require('../schema.js');
+const { User } = require('../schema.js');
 
 const md_signIn = async (req, res, next) => {
     console.log('md_signIn');
