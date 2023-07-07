@@ -37,6 +37,7 @@ const Settings = mongoose.model('Settings', settingsUserSchema);
 
 const setGroupSchema = new mongoose.Schema({
     pseudoArray: Array,
+    confirmed: Boolean,
     rel: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
