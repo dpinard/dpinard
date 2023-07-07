@@ -27,7 +27,10 @@ app.get('/', async (req, res) => {
   // res.send(finder);
 
   // const user = await Settings.find().populate('stg').exec();
-  const user = await User.find({}).populate('ofCourse').exec();
+  const user = await User.find({})
+  .populate('ofCourse')
+  .populate('ofCourse1')
+  .exec();
   // const user = await Settings.find({stg:'64a72a4ac5f54969da978020'}).exec();
 
   
@@ -88,17 +91,17 @@ app.get('/set', md_authToken, async (req, res) => {
   console.log('route set');
   console.log(req.body.foo);
   
-  let val='';
   // const set = setGroup.find({rel: req.body.foo}).populate('rel').exec().then(result => {
-    const set = await setGroup.findOne({rel: req.body.foo}).exec().then(result => {
-      console.log(result+'result')
-      result.pseudoArray.push(req.body.pseudo)
-      result.save()
-      val = result
-    }).catch(err => {
-      console.log(err);
-    });
-    console.log(val)
+    await setGroup.findOne({rel: req.body.foo})
+      .exec()
+      .then(result => {
+        console.log(result+'result')
+        result.pseudoArray.push(req.body.pseudo)
+        result.save()
+      })
+      .catch(err => {
+        console.log(err);
+      });
   
   res.json({ msg: 'route set', body: req.body});
 })
