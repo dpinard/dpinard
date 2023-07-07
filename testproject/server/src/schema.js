@@ -12,6 +12,11 @@ const userSchema = new mongoose.Schema({
     ofCourse: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Settings',
+    }],
+    ofCourse1: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'setGroup',
+
     }]
 });
 const User = mongoose.model('User', userSchema);
@@ -30,9 +35,19 @@ const settingsUserSchema = new mongoose.Schema({
 const Settings = mongoose.model('Settings', settingsUserSchema);
 
 
+const setGroupSchema = new mongoose.Schema({
+    pseudoArray: Array,
+    rel: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    }
+})
+const setGroup = mongoose.model('setGroup', setGroupSchema);
+
 
 User.schema.path('ofCourse').options.ref = Settings;
 Settings.schema.path('stg').options.ref = User;
+setGroup.schema.path('rel').options.ref = User;
 
 
 
@@ -44,4 +59,5 @@ Settings.schema.path('stg').options.ref = User;
 module.exports = {
     User: User, 
     Settings: Settings,
+    setGroup: setGroup,
 }; 

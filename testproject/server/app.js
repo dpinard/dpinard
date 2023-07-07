@@ -8,6 +8,7 @@ const md_tokenSession = require('./src/middleware/md_tokenSession');
 const md_authToken = require('./src/middleware/md_authToken');
 const { User } = require('./src/schema.js');
 const { Settings } = require('./src/schema.js');
+const { setGroup } = require('./src/schema.js');
 
 const mongoose = require('mongoose');
 
@@ -26,7 +27,7 @@ app.get('/', async (req, res) => {
   // res.send(finder);
 
   // const user = await Settings.find().populate('stg').exec();
-  const user = await User.find({}).exec();
+  const user = await User.find({}).populate('ofCourse').exec();
   // const user = await Settings.find({stg:'64a72a4ac5f54969da978020'}).exec();
 
   
@@ -52,8 +53,8 @@ app.post('/signin', [md_signIn, md_tokenSession], (req, res) => {
 
 
 
-app.get('/follow', md_authToken, async(req, res) => {
-  console.log('routeFOLLOW');
+app.get('/settings', md_authToken, async(req, res) => {
+  console.log('routeSettings');
   const setUser = new Settings({
     pseudo: req.body.pseudo,
     stg: req.body.foo,
@@ -61,14 +62,11 @@ app.get('/follow', md_authToken, async(req, res) => {
   setUser.save()
     .then(uId => {
       console.log(uId._id);
-      let user = User.findById({_id: uId.stg}).exec().then((res) => {
+      User.findById({_id: uId.stg}).exec().then((res) => {
         console.log(res);
         res.ofCourse.push(uId._id);
         res.save();
-
       });
-
-
     }).catch(fId => {
       console.log('catch'+fId);
   });
@@ -78,18 +76,32 @@ app.get('/follow', md_authToken, async(req, res) => {
     // ofCourse: req.body.foo,
   // })
   // setUser.save()
-
   // const user =  await User.findOne({email: 'test@test.com'}).populate('stg').then(result => {
     // console.log(result);
   // })
-
   // const user = await User.find().populate('stg').exec()
   console.log(setUser);
-
-
   res.json(req.body)
 })
 
+app.get('/set', md_authToken, async (req, res) => {
+  console.log('route set');
+  console.log(req.body.foo);
+  
+  let val='';
+  // const set = setGroup.find({rel: req.body.foo}).populate('rel').exec().then(result => {
+    const set = await setGroup.findOne({rel: req.body.foo}).exec().then(result => {
+      console.log(result+'result')
+      result.pseudoArray.push(req.body.pseudo)
+      result.save()
+      val = result
+    }).catch(err => {
+      console.log(err);
+    });
+    console.log(val)
+  
+  res.json({ msg: 'route set', body: req.body});
+})
 
 
 
