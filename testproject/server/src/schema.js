@@ -62,3 +62,12 @@ module.exports = {
     Settings: Settings,
     setGroup: setGroup,
 }; 
+
+
+/*
+    relation user->settings
+    relation user->friends [followings, followers]
+    relation user->bets [my bet, follower bet] 
+
+
+*/
