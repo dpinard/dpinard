@@ -24,7 +24,7 @@ SPECIFICATIONS FEATURES PRONO-STATS v1.0.0
             -type de compte (visibiliter:anonyme,public)
             -ajouter/modifier/supprimer image de profil
             -description utilisateur
-    
+x    
     -service notifications
 
 
