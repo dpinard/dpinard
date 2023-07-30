@@ -22,6 +22,11 @@ async function main() {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.get('/test', (req, res) => {
+  res.json({msg:'ceci est un texte test'})
+})
+
+
 app.get('/', async (req, res) => {
   // const finder = await User.find();
   // res.send(finder);

@@ -3,15 +3,11 @@ const { User } = require('../schema.js');
 
 const md_signIn = async (req, res, next) => {
     console.log('md_signIn');
+    const login = await User.findOne({email: req.body.email}).exec()
     // console.log(req.body);
-
-    const login = await User.findOne({email: req.body.email})
-    .exec()
-
     // console.log(login);
     // console.log(login.hashPwd);
     if (login) {
-
         bcrypt.compare(req.body.pwd, login.hashPwd).then(function(result) {
             console.log(result);
             if (result === true) {
@@ -23,10 +19,10 @@ const md_signIn = async (req, res, next) => {
                 res.json({msg: 'mauvais password'});
             }
         })
-    } else {
+    } 
+    else {
         res.json({msg: 'mauvais nom utilisateur'});
-    }
-    
+    }   
 }
 
 

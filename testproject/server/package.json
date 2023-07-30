@@ -6,7 +6,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.6.0",
     "mongoose": "^7.3.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^3.0.1"
   },
   "name": "server-pronostat",
   "version": "1.0.0",

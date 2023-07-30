@@ -8,7 +8,7 @@ const md_tokenSession = (req, res, next) => {
         foo: req.body.id,
         bar: req.body.name
     }, 'secret', {expiresIn: '2h'});
-
+    
     req.body.token = token;
     next();
 }

@@ -10,25 +10,21 @@ const md_hashPwd = (req, res, next) => {
     bcrypt.hash(plainMdp, saltRounds).then(function(hash) {
         const user = new User({email: req.body.email, hashPwd: hash})
         
-
         req.body.msg = 'no new user';
-
         user.save()
             .then((user) => {
-                console.log(user._id)
+                // console.log(user._id)
                 const set = new setGroup({
-                    pseudoArray: 'dam',
+                    // pseudoArray: 'dam',
                     rel: user._id
-                  })
+                })
                 set.save()
                     .then((iId) => {
                         User.findById({_id: iId.rel}).exec().then(res => {
                             res.ofCourse1.push(iId._id);
                             res.save();
                         })
-                })
-        
-
+                    })
                 req.body.msg = 'ADD NEW USER&'; 
                 next();
             })
