@@ -9,8 +9,6 @@ const md_signIn = require('./src/md_auth/md-signin');
 const md_tokenSession = require('./src/md_auth/md_tokenSession');
 const md_authToken = require('./src/md_auth/md_authToken');
 const { User } = require('./src/schema.js');
-const { Settings } = require('./src/schema.js');
-const { setGroup } = require('./src/schema.js');
 const md_newSetting = require('./src/md_user/settings.js');
 const md_newSet = require('./src/md_user/newSet.js');
 
