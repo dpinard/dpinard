@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const port = 8000
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
 const md_hashPwd = require('./src/md_auth/md-signup');
 const md_signIn = require('./src/md_auth/md-signin');
 const md_tokenSession = require('./src/md_auth/md_tokenSession');
@@ -9,8 +11,9 @@ const md_authToken = require('./src/md_auth/md_authToken');
 const { User } = require('./src/schema.js');
 const { Settings } = require('./src/schema.js');
 const { setGroup } = require('./src/schema.js');
+const { md_newSetting } = require('./src/md_user/settings');
+const { md_newSet } = require('./src/md_user/newSet');
 
-const mongoose = require('mongoose');
 
 main().catch(err => console.log(err));
 
@@ -46,7 +49,6 @@ app.get('/', async (req, res) => {
 })
 
 app.get('/signup', (req, res) => {
-
 })
 
 app.post('/signup', md_hashPwd, (req, res) => {
@@ -61,56 +63,11 @@ app.post('/signin', [md_signIn, md_tokenSession], (req, res) => {
   res.json({msg: 'SIGN IN OK', 'token': req.body.token})
 })
 
-
-
-app.get('/settings', md_authToken, async(req, res) => {
-  console.log('routeSettings');
-  const setUser = new Settings({
-    pseudo: req.body.pseudo,
-    stg: req.body.foo,
-  })
-  setUser.save()
-    .then(uId => {
-      console.log(uId._id);
-      User.findById({_id: uId.stg}).exec().then((res) => {
-        console.log(res);
-        res.ofCourse.push(uId._id);
-        res.save();
-      });
-    }).catch(fId => {
-      console.log('catch'+fId);
-  });
-
-  // const setUser= new User({
-    // pseudo: req.body.pseudo,
-    // ofCourse: req.body.foo,
-  // })
-  // setUser.save()
-  // const user =  await User.findOne({email: 'test@test.com'}).populate('stg').then(result => {
-    // console.log(result);
-  // })
-  // const user = await User.find().populate('stg').exec()
-  console.log(setUser);
-  res.json(req.body)
+app.get('/settings', [md_authToken, md_newSetting], async(req, res) => {
+  res.json({msg:'nouveau setting', body: req.body})
 })
 
-app.get('/set', md_authToken, async (req, res) => {
-  console.log('route set');
-  console.log(req.body.foo);
-  
-  // const set = setGroup.find({rel: req.body.foo}).populate('rel').exec().then(result => {
-  await setGroup.findOne({rel: req.body.foo})
-    .exec()
-    .then(result => {
-      console.log(result+'result')
-      result.pseudoArray.push(req.body.pseudo)
-      result.confirmed = true;
-      result.save()
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  
+app.get('/set', md_authToken, md_newSet, async (req, res) => {
   res.json({ msg: 'route set', body: req.body});
 })
 
