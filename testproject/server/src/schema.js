@@ -16,7 +16,10 @@ const userSchema = new mongoose.Schema({
     ofCourse1: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'setGroup',
-
+    }],
+    friends: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'friendsRef',
     }]
 });
 const User = mongoose.model('User', userSchema);
@@ -46,7 +49,19 @@ const setGroupSchema = new mongoose.Schema({
 const setGroup = mongoose.model('setGroup', setGroupSchema);
 
 
+const friendSchema = new mongoose.Schema({
+    friendsArray: Array,
+    rel: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    }
+})
+const Friends = mongoose.model('Friends', friendSchema);
+
+
+
 User.schema.path('ofCourse').options.ref = Settings;
+User.schema.path('friends').options.ref = Friends;
 Settings.schema.path('stg').options.ref = User;
 setGroup.schema.path('rel').options.ref = User;
 
@@ -59,6 +74,7 @@ setGroup.schema.path('rel').options.ref = User;
     
 module.exports = {
     User: User, 
+    Friends: Friends, 
     Settings: Settings,
     setGroup: setGroup,
 }; 
