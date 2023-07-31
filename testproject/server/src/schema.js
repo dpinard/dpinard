@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     }],
     friends: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'friendsRef',
+        ref: 'Fds',
     }]
 });
 const User = mongoose.model('User', userSchema);
@@ -56,7 +56,7 @@ const friendSchema = new mongoose.Schema({
         ref: 'User',
     }
 })
-const Friends = mongoose.model('Friends', friendSchema);
+const Friends = mongoose.model('Fds', friendSchema);
 
 
 

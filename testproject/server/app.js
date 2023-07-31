@@ -2,10 +2,10 @@ const express = require('express')
 const app = express()
 const port = 8000
 const bodyParser = require('body-parser');
-const md_hashPwd = require('./src/middleware/md-signup');
-const md_signIn = require('./src/middleware/md-signin');
-const md_tokenSession = require('./src/middleware/md_tokenSession');
-const md_authToken = require('./src/middleware/md_authToken');
+const md_hashPwd = require('./src/md_auth/md-signup');
+const md_signIn = require('./src/md_auth/md-signin');
+const md_tokenSession = require('./src/md_auth/md_tokenSession');
+const md_authToken = require('./src/md_auth/md_authToken');
 const { User } = require('./src/schema.js');
 const { Settings } = require('./src/schema.js');
 const { setGroup } = require('./src/schema.js');
@@ -23,6 +23,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/test', (req, res) => {
+
   res.json({msg:'ceci est un texte test'})
 })
 
@@ -35,6 +36,7 @@ app.get('/', async (req, res) => {
   const user = await User.find({})
   .populate('ofCourse')
   .populate('ofCourse1')
+  .populate('friends')
   .exec();
   // const user = await Settings.find({stg:'64a72a4ac5f54969da978020'}).exec();
 
