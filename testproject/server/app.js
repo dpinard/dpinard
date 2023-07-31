@@ -11,8 +11,8 @@ const md_authToken = require('./src/md_auth/md_authToken');
 const { User } = require('./src/schema.js');
 const { Settings } = require('./src/schema.js');
 const { setGroup } = require('./src/schema.js');
-const { md_newSetting } = require('./src/md_user/settings');
-const { md_newSet } = require('./src/md_user/newSet');
+const md_newSetting = require('./src/md_user/settings.js');
+const md_newSet = require('./src/md_user/newSet.js');
 
 
 main().catch(err => console.log(err));
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/test', (req, res) => {
 
-  res.json({msg:'ceci est un texte test'})
+  res.json({msg:'ceci est un route test'})
 })
 
 
@@ -42,8 +42,6 @@ app.get('/', async (req, res) => {
   .populate('friends')
   .exec();
   // const user = await Settings.find({stg:'64a72a4ac5f54969da978020'}).exec();
-
-  
   console.log(user);
   res.send(user);
 })
@@ -63,11 +61,11 @@ app.post('/signin', [md_signIn, md_tokenSession], (req, res) => {
   res.json({msg: 'SIGN IN OK', 'token': req.body.token})
 })
 
-app.get('/settings', [md_authToken, md_newSetting], async(req, res) => {
+app.get('/settings', [md_authToken, md_newSetting], (req, res) => {
   res.json({msg:'nouveau setting', body: req.body})
 })
 
-app.get('/set', md_authToken, md_newSet, async (req, res) => {
+app.get('/set', [md_authToken, md_newSet], (req, res) => {
   res.json({ msg: 'route set', body: req.body});
 })
 
