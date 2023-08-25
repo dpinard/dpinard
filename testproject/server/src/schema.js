@@ -82,24 +82,26 @@ module.exports = {
 
 /*
     relation user->settings_account
+                        -password forgot
                         - email confirmation
                         - change password
                         - history connection
                         -account verification 
-                    
+                        
     relation user->friends [followings, followers]
                         -friends
-                            -search
-                                -add
+                        -search
+                                -add new friend
                                 -delete
-                            -add copy friend
+                                -add copy friend
 
     relation user->bets [my bet, follower bet]
                         -wallet
                             - amount add
                             - amount withdraw
  
-                        -personal bet
+                        -personal bet   
+                            -personal bet status (safe, moderee, risque)
                             -add 
                             -delete
                             -modify
@@ -120,12 +122,12 @@ module.exports = {
                             -auto bet profit
                             -history depot/withdraw/alloc
                         -personal bet
-                            -following
+                            -number following
                             -pass
                             -pending
                             -close
                         -auto bet
-                            -followed
+                            -number followed
                             -pass
                             -pending
                             -close
