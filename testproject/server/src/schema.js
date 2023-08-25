@@ -81,9 +81,51 @@ module.exports = {
 
 
 /*
-    relation user->settings
+    relation user->settings_account
+                        - email confirmation
+                        - change password
+                        - history connection
+                        -account verification 
+                    
     relation user->friends [followings, followers]
-    relation user->bets [my bet, follower bet] 
+                        -friends
+                            -search
+                                -add
+                                -delete
+                            -add copy friend
 
+    relation user->bets [my bet, follower bet]
+                        -wallet
+                            - amount add
+                            - amount withdraw
+ 
+                        -personal bet
+                            -add 
+                            -delete
+                            -modify
+                            -read
+                        -auto bet
+                            -add 
+                            -delete
+                            -modify
+                            -read
 
+                            
+    relation user->settings_stats
+                        -account
+                            -logs
+                        -wallet
+                            -personal profit
+                            -auto bet profit
+                            -history depot/withdraw/alloc
+                        -personal bet
+                            -following
+                            -pass
+                            -pending
+                            -close
+                        -auto bet
+                            -followed
+                            -pass
+                            -pending
+                            -close
 */
