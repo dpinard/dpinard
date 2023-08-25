@@ -114,6 +114,7 @@ module.exports = {
     relation user->settings_stats
                         -account
                             -logs
+                            -XP
                         -wallet
                             -personal profit
                             -auto bet profit
